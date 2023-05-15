@@ -1,0 +1,62 @@
+﻿@model IEnumerable<ESun.Models.ExamData>
+
+@{
+    /**/
+
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            年度
+        </th>
+        <th>
+            月份
+        </th>
+        <th>
+            現金門票收入
+        </th>
+        <th>
+            多卡通門票收入
+        </th>
+        <th>
+            門票收入合計
+        </th>
+        <th>
+            當月購票入園人數
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.年度)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.月份)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.現金門票收入)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.多卡通門票收入)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.門票收入合計)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.當月購票入園人數)
+            </td>
+        </tr>
+    }
+</table>
+
+@*@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <input type="submit" value="寫入資料庫" class="btn btn-default" />
+}*@
